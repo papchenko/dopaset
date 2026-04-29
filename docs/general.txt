@@ -1,0 +1,87 @@
+mkdir certs
+cd certs
+
+openssl genrsa -out key.pem 2048
+
+openssl req -new -x509 -key key.pem -out cert.pem -days 365
+for CN (Common Name) enter: localhost
+
+
+import fs from 'fs'
+plugins: [react()],
+server: {
+  https: {
+    key: fs.readFileSync('./certs/key.pem'),
+    cert: fs.readFileSync('./certs/cert.pem'),
+  },
+  host: '0.0.0.0',
+  port: 5173
+}
+//========================================================================================================================================================
+dependencies
+npm install \
+react-icons \
+react-router-dom \
+swiper \
+react-toastify \
+@emailjs/browser \
+react-google-recaptcha \
+
+//========================================================================================================================================================
+npm install -D tailwindcss@3.3.3 postcss@8 autoprefixer@10
+--------------
+tailwind.config.cjs
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+--------------
+postcss.config.cjs
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+--------------
+src/index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+--------------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+//========================================================================================================================================================
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
+const App = () => {
+  return (
+  <>
+  <Router>
+    <Routes>
+      <Route path="/" element={< />} />
+    </Routes>
+  </Router>
+    <ToastContainer position="top-right" autoClose={1500} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} draggable />
+  </>
+ );
+};
+
+export default App;
+//========================================================================================================================================================

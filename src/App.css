@@ -1,0 +1,71 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  /* background-color:#2d0a31; */
+  background-color: #0f172a;
+  color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.animate-progress {
+  width: 100%;
+  animation: progress 15s linear;
+}
+
+.hero-animation {
+  animation: heroIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards,
+             heroFloat 6s ease-in-out infinite 1s,
+             heroOpacity 6s ease-in-out infinite 1s;
+}
+
+@keyframes heroIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* float рух */
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+/* постійний opacity breathing */
+@keyframes heroOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
