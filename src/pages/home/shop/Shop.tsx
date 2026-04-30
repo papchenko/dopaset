@@ -63,7 +63,7 @@ export default function Shop() {
   const exists = itemsInCart.find(i => i.id === item.id);
 
   if (exists) {
-    toast.error("This item is already in your cart");
+    toast.info("This item is already in your cart");
     return;
   }
 
@@ -125,7 +125,7 @@ export default function Shop() {
 
                   <button
                     onClick={() => handleAdd(item)}
-                    className="absolute top-4 right-4 bg-orange-500 hover:bg-orange-400 text-white text-base px-4 py-2 rounded-full backdrop-blur"
+                    className="absolute top-4 right-4 bg-[#586ba4] hover:bg-opacity-90 text-white text-base px-4 py-2 rounded-full backdrop-blur"
                   >
                     <FaShoppingCart />
                   </button>

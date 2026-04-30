@@ -152,7 +152,7 @@ ${formData.postalOffice}
               required
             />
 
-            <button className="py-3 bg-orange-500 rounded">
+            <button className="py-3 bg-[#586ba4] rounded">
               Continue
             </button>
           </form>
@@ -191,13 +191,13 @@ ${formData.postalOffice}
               />
             </div>
 
-            <p className="text-red-400 text-sm">
+            <p className="text-red-600 text-sm">
               Put order number in payment comment
             </p>
 
             <button
               onClick={handleConfirm}
-              className="py-3 bg-green-600 rounded"
+              className="py-3 bg-[#586ba4] rounded"
             >
               I Paid
             </button>

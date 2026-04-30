@@ -10,8 +10,7 @@ import { FaBoltLightning } from "react-icons/fa6";
 export default function DopasetCore() {
   const { base, userProfile, history, plan, stats, saveBase, saveDay } =
     useDopaset();
-
-  // 🔥 SaaS AI access control
+    
   const isAIEnabled =
     userProfile?.plan === "Dopaset Pro" ||
     userProfile?.plan === "Dopaset Ultra";
@@ -73,12 +72,19 @@ export default function DopasetCore() {
   const weekly = calculateWeekly(history);
   const ai = getAIAdvice(history);
 
+  const handleNumberInput = (value: string) => {
+    if (/^\d{0,2}$/.test(value)) {
+      return value;
+    }
+    return null;
+  };
+
   return (
     <div className="pt-[80px]">
       <div className="min-h-screen bg-black text-white p-10">
 
-        {/* 🔥 STATS */}
-        <div className="flex gap-6 text-purple-300 mb-6">
+        {/* 🔥 STATS text-purple-300 */}
+        <div className="flex gap-6 text-[#586ba4] mb-6">
           <div><FaFire /> {stats.streak}</div>
           <div><FaBoltLightning /> {stats.xp}</div>
           <div><FaTrophy /> Lv {stats.level}</div>
@@ -98,21 +104,29 @@ export default function DopasetCore() {
           >
             <input
               placeholder="Phone hours"
-              onChange={e =>
-                setForm({ ...form, phoneHours: e.target.value })
-              }
+              value={form.phoneHours}
+              onChange={e => {
+                const val = handleNumberInput(e.target.value);
+                if (val !== null) {
+                  setForm({ ...form, phoneHours: val });
+                }
+              }}
               className="p-2 bg-zinc-900"
             />
 
             <input
               placeholder="Social hours"
-              onChange={e =>
-                setForm({ ...form, socialHours: e.target.value })
-              }
+              value={form.socialHours}
+              onChange={e => {
+                const val = handleNumberInput(e.target.value);
+                if (val !== null) {
+                  setForm({ ...form, socialHours: val });
+                }
+              }}
               className="p-2 bg-zinc-900"
             />
 
-            <button className="bg-purple-600 p-2">
+            <button className="bg-[#586ba4] p-2">
               Start
             </button>
           </form>
@@ -135,7 +149,7 @@ export default function DopasetCore() {
                 onClick={() => toggle(t, "req")}
                 className={`p-2 mb-2 cursor-pointer border ${
                   doneReq.includes(t)
-                    ? "bg-green-500/20 border-green-500"
+                    ? "bg-green-400/20 border-green-400"
                     : "bg-zinc-900 border-zinc-700"
                 }`}
               >
@@ -167,7 +181,7 @@ export default function DopasetCore() {
                 todayDone ||
                 doneReq.length < plan.required.length
               }
-              className="mt-4 bg-green-600 p-2 disabled:opacity-50"
+              className="mt-4 bg-[#586ba4] p-2 disabled:opacity-50"
             >
               Finish Day
             </button>
@@ -183,8 +197,9 @@ export default function DopasetCore() {
               <p>Total: {weekly.total}</p>
             </div>
 
-            {/* AI COACH SaaS */}
-            <div className="mt-4 text-purple-400">
+            {/* AI Assistant SaaS */}
+            <div className="mt-4 text-[#586ba4]">
+              <p className="text-white/30">AI Assistant:</p>
               {isAIEnabled
                 ? ai
                 : "Upgrade to Dopaset Pro or Ultra to unlock AI Coach"}

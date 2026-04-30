@@ -128,7 +128,7 @@ if (!plan) {
               className="p-2 rounded bg-zinc-800"
             />
 
-            <button className="py-3 bg-purple-500 rounded">
+            <button className="py-3 bg-[#586ba4] rounded">
               Continue
             </button>
           </form>
@@ -163,7 +163,7 @@ if (!plan) {
 
             <button
               onClick={handleConfirm}
-              className="py-3 bg-green-600 rounded"
+              className="py-3 bg-[#586ba4] rounded"
             >
               I Paid
             </button>
@@ -178,7 +178,7 @@ if (!plan) {
 
             <button
               onClick={() => navigate("/")}
-              className="mt-4 py-2 bg-zinc-700 rounded"
+              className="mt-4 py-2 px-3 bg-zinc-700 rounded"
             >
               Back Home
             </button>

@@ -61,20 +61,20 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
               Premium
             </Link> */}
             <Link
-              to="/about"
+              to="/info"
               className="text-gray-300 hover:text-white transition"
             >
-              About
+              Info
             </Link>
-                       <div className="relative cursor-pointer" onClick={() => setCartOpen(true)}>
-  <FaShoppingCart className="text-white text-2xl" />
+            <div className="relative cursor-pointer" onClick={() => setCartOpen(true)}>
+              <FaShoppingCart className="text-white text-2xl" />
 
-  {totalCount > 0 && (
-    <span className="absolute -top-2 -right-2 bg-orange-500 text-xs px-2 py-[2px] rounded-full">
-      {totalCount}
-    </span>
-  )}
-</div>
+              {totalCount > 0 && (
+                <span className="absolute -top-2 -right-2 bg-[#586ba4] text-xs px-2 py-[2px] rounded-full">
+                  {totalCount}
+                </span>
+              )}
+            </div>
               {user ? (
                 <Link to="/profile" className="flex items-center gap-2">
                   {avatar ? (
@@ -83,7 +83,7 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
                       className="w-7 h-7 rounded-full object-cover border border-zinc-700"
                     />
                   ) : (
-                    <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold">
+                    <div className="w-9 h-9 rounded-full bg-[#586ba4] flex items-center justify-center text-white font-semibold">
                       {profile?.nickname?.[0]?.toUpperCase()}
                     </div>
                   )}
@@ -91,9 +91,9 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
               ) : (
                 <button
                   onClick={() => setAuthOpen(true)}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md"
+                  className="px-4 py-2 bg-[#586ba4] text-white rounded-md"
                 >
-                  Sign Up
+                  Sign In
                 </button>
               )}
           </nav>
@@ -108,7 +108,7 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
     <FaShoppingCart className="text-white text-2xl" />
 
     {totalCount > 0 && (
-      <span className="absolute -top-2 -right-2 bg-orange-500 text-xs px-2 py-[2px] rounded-full">
+      <span className="absolute -top-2 -right-2 bg-[#586ba4] text-xs px-2 py-[2px] rounded-full">
         {totalCount}
       </span>
     )}
@@ -123,7 +123,7 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
           className="w-7 h-7 rounded-full object-cover border border-zinc-700"
         />
       ) : (
-        <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-semibold">
+        <div className="w-8 h-8 rounded-full bg-[#586ba4] flex items-center justify-center text-white text-sm font-semibold">
           {profile?.nickname?.[0]?.toUpperCase()}
         </div>
       )}
@@ -131,9 +131,9 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
   ) : (
     <button
       onClick={() => setAuthOpen(true)}
-      className="px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm"
+      className="px-3 py-1.5 bg-[#586ba4] text-white rounded-md text-sm"
     >
-      Sign Up
+      Sign In
     </button>
   )}
 
@@ -158,8 +158,8 @@ const totalCount = items.reduce((acc, i) => acc + i.quantity, 0);
           <Link to="/" onClick={() => setIsOpen(false)}>
             Home
           </Link>
-          <Link to="/about" onClick={() => setIsOpen(false)}>
-            About
+          <Link to="/info" onClick={() => setIsOpen(false)}>
+            Info
           </Link>
 
         </div>

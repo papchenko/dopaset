@@ -120,7 +120,7 @@ const Footer: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50"
+              className="px-5 py-2 bg-[#586ba4] text-white rounded-md hover:bg-blue-700 transition disabled:opacity-50"
             >
               {loading ? "Sending..." : "Subscribe"}
             </button>
@@ -137,8 +137,8 @@ const Footer: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-white">
-                About
+              <Link to="/info" className="hover:text-white">
+                Info
               </Link>
             </li>
           </ul>

@@ -46,7 +46,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/premium" element={<Premium />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/info" element={<About />} />
             <Route path="/shop-orders" element={<CheckoutPayment />} />
             <Route path="/premium-checkout" element={<PremiumCheckout />} />
             <Route path="/profile" element={ <PrivateRoute> <Profile /> </PrivateRoute> } />
@@ -63,9 +63,10 @@ const App = () => {
         <Footer />
 
         <ToastContainer
-          position="top-right"
+          position="bottom-right"
           autoClose={1500}
-          hideProgressBar={false}
+          icon={false}
+          hideProgressBar={true}
         />
       </div>
       <CookieBanner />

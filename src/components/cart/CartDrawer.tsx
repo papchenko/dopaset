@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useAuth } from "../../context/AuthContext";
 import {
@@ -9,6 +8,7 @@ import {
 } from "../../store/slices/cartSlice";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type Props = {
   open: boolean;
@@ -27,13 +27,6 @@ export default function CartDrawer({ open, onClose }: Props) {
     0
   );
 
-  // useEffect(() => {
-  //   document.body.style.overflow = open ? "hidden" : "auto";
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // }, [open]);
-
   if (!open) return null;
 
   return createPortal(
@@ -50,7 +43,7 @@ export default function CartDrawer({ open, onClose }: Props) {
         {/* HEADER */}
         <div className="p-5 flex justify-between border-b border-zinc-800">
           <h2 className="text-white">Cart</h2>
-          <button onClick={onClose} className="text-white">✕</button>
+          <button onClick={onClose} className="text-white text-xl">✕</button>
         </div>
 
         {/* ITEMS */}
@@ -74,7 +67,7 @@ export default function CartDrawer({ open, onClose }: Props) {
 
                 <button
                   onClick={() => dispatch(removeFromCart(item.id))}
-                  className="text-red-400 text-sm"
+                  className="text-red-600 text-sm"
                 >
                   remove
                 </button>
@@ -89,25 +82,25 @@ export default function CartDrawer({ open, onClose }: Props) {
 
           <button
             onClick={() => dispatch(clearCart())}
-            className="mt-3 text-red-400"
+            className="mt-3 text-red-600"
           >
             Clear cart
           </button>
 
           <button
-      onClick={() => {
-        if (!user) {
-          alert("Sign in first");
-          return;
-        }
+            onClick={() => {
+              if (!user) {
+                toast.info("Sign in first");
+                return;
+              }
 
-        onClose();
-        navigate("/shop-orders");
-      }}
-  className="mt-3 w-full py-2 bg-orange-500 text-white rounded"
->
-  Proceed Checkout
-</button>
+              onClose();
+              navigate("/shop-orders");
+            }}
+          className="mt-3 w-full py-2 bg-[#586ba4] text-white rounded"
+          >
+          Proceed Checkout
+        </button>
         </div>
       </div>
     </>,

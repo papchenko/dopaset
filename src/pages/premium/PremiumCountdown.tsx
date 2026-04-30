@@ -29,7 +29,7 @@ export default function PremiumCountdown() {
   if (!expires) return null;
 
   return (
-    <div className="text-sm text-purple-400">
+    <div className="text-sm text-[#586ba4]">
       Premium ends in: {timeLeft}
     </div>
   );

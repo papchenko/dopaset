@@ -53,7 +53,7 @@ export default function CookieBanner() {
 
           <button
             onClick={acceptAll}
-            className="px-4 py-2 rounded-xl text-sm bg-gradient-to-r from-purple-500 to-cyan-500"
+            className="px-4 py-2 rounded-xl text-sm bg-[#586ba4]"
           >
             Accept
           </button>

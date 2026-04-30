@@ -59,8 +59,7 @@ const ContactModal = ({ onClose }) => {
 
       {/* glow background */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-[-200px] left-1/2 w-[500px] h-[500px] -translate-x-1/2 bg-purple-600 blur-[140px] rounded-full" />
-        <div className="absolute bottom-[-200px] right-[-100px] w-[400px] h-[400px] bg-cyan-500 blur-[140px] rounded-full" />
+        <div className="absolute top-[-200px] left-1/2 w-[500px] h-[500px] -translate-x-1/2 bg-[#586ba4] blur-[160px] rounded-full" />
       </div>
 
       {/* modal */}
@@ -120,7 +119,7 @@ const ContactModal = ({ onClose }) => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-90 transition font-medium"
+            className="w-full py-3 rounded-xl bg-[#586ba4] hover:opacity-90 transition font-medium"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>
