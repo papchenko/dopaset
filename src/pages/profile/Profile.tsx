@@ -207,9 +207,9 @@ export default function Profile() {
                 {profile?.nickname}
               </h1>
 
-              <p className="text-sm text-zinc-400">
+              {/* <p className="text-sm text-zinc-400">
                 {profile?.email}
-              </p>
+              </p> */}
 
               {/* PREMIUM BADGE */}
               {profile?.premium && (
