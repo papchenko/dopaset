@@ -85,3 +85,18 @@ const App = () => {
 
 export default App;
 //========================================================================================================================================================
+
+git add .
+git commit -m "update: new feature"
+git push
+npm run build
+npm run deploy
+
+//=====================================
+"scripts": {
+  "build": "vite build",
+  "deploy": "gh-pages -d dist",
+  "publish": "npm run build && npm run deploy"
+}
+
+npm run publish
